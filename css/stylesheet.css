@@ -78,11 +78,22 @@ button{
     width: 25%;
 }
 .all-clear{
-    width: 55%;
     background: #ff14c4;
     color: #fff;
 }
+
 .all-clear:hover 
+{
+      
+    box-shadow: inset 5px 5px 8px #f1e9ed,
+    inset -5px -5px 8px #f1e9ed;
+    background-color: rgb(0, 0, 0);
+}
+.backspace{
+    background: #ff14c4;
+    color: #fff;
+}
+.backspace:hover 
 {
       
     box-shadow: inset 5px 5px 8px #f1e9ed,
@@ -120,8 +131,8 @@ button:hover{
 }
 h2  
 {
-    font-size: 40px;
-    position: relative;  
+    font-size: 20px;
+    position: center;  
     bottom: 1em; 
     margin-left: 1.2em;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -135,13 +146,13 @@ h2
                     6px 6px 6px #000000,
                     7px 7px 7px #000000,
                     8px 8px 8px #000000;
-                    letter-spacing: 6px;
+                    letter-spacing: 4px;
 }
 
 h2 span
 {
 color: #000000;
-font-size: 45px;
+font-size: 20px;
 text-shadow: 1px 1px 1px #ff14c4,
                 1px 1px 2px #ff14c4,
                 3px 3px 3px #ff14c4,
@@ -154,5 +165,6 @@ h2 .fa
 {
     position: absolute; 
     top: 1.5em;
-    color: #33ccff;
+    color: #ff14c4;
+
 }
