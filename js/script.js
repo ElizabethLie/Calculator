@@ -8,7 +8,7 @@ let currentNumber = '0'
 const updateScreen = (number) => {
    calculatorScreen.value = number 
 }
-
+//bagian inputNumber dalam kalkulator 
 const inputNumber = (number) => {
     //currentNumber += number
     if (currentNumber === '0'){
@@ -53,7 +53,7 @@ equalSign.addEventListener('click', () => {
     updateScreen(currentNumber)
     console.log(currentNumber)
 })
-
+//bagian equals dalam kalkulator 
 const calculate = () => {
     let result = ''
     switch(calculationOperator){
@@ -79,7 +79,7 @@ const calculate = () => {
     currentNumber = result
     calculationOperator = ''
 }
-
+// bagian clear dalam kalkulator 
 const clearBtn = document.querySelector('.all-clear')
 
 clearBtn.addEventListener('click', () => {
@@ -94,7 +94,7 @@ const clearAll = () => {
     currentNumber = '0'
 }
 
-
+ // bagian decimal dalam kalkulator
 const decimal = document.querySelector('.decimal')
 
 decimal.addEventListener('click', (event) => {
@@ -109,3 +109,32 @@ inputDecimal = (dot) => {
     }
     currentNumber += dot
 }
+
+//bagian persen dalam kalkulator 
+const percentages = document.querySelector(".percentage");
+const divPercent = (number) => {
+    if (currentNumber === "0") {
+      currentNumber = number;
+    } else {
+      currentNumber /= 100;
+    }
+  };
+  
+percentages.addEventListener("click", (event) => {
+    divPercent(event.target.value);
+    updateScreen(currentNumber);
+});
+
+//bagian delete dalam kalkulator 
+const backspaces = document.querySelector(".backspace");
+const deleteNumber = () => {
+    if (currentNumber.length > 1) {
+      currentNumber = currentNumber.slice(0, -1);
+    } else {
+      currentNumber = "0";
+    }
+};
+backspaces.addEventListener("click", (event) => {
+    deleteNumber(event.target.value);
+    updateScreen(currentNumber);
+});
